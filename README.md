@@ -1,66 +1,132 @@
 # Task Management System (API Based)
 
-A simple and scalable **Task Management System** built with **Laravel (API)**, **Sanctum Authentication**, **Spatie Role Permission**, and **React frontend**.
-
-This system helps teams manage daily tasks, track progress, and maintain workflow transparency in a clean and structured way.
+A modern Task Management System built with Laravel (API) and React.js to help teams manage daily tasks, track progress, and stay organized efficiently.
 
 ---
 
-##  Features
+## Features
 
--  User Authentication (Login/Register using Sanctum)
--  Role & Permission Management (Admin, Member) using Spatie
--  Task CRUD (Create, Read, Update, Delete)
--  Task Assignment to Users
--  Task Status Workflow  
-  (Pending → In Progress → Review → Completed)
--  Activity Log (Track all task changes)
--  Role-based Access Control
--  Clean REST API for frontend integration (React)
+- User Authentication using Laravel Sanctum  
+- Role and Permission Management (Spatie)  
+- Task CRUD (Create, Read, Update, Delete)  
+- Assign Tasks to Users  
+- Task Workflow:
+  - Pending
+  - In Progress
+  - Review
+  - Completed  
+- Activity Tracking  
+- Role-Based Access Control (RBAC)  
+- REST API for Frontend Integration  
 
 ---
 
-##  Technology Stack
+## Technology Stack
 
 ### Backend
 - Laravel 12+
-- PHP 8.2
-- Laravel Sanctum (API Authentication)
+- PHP 8.2+
+- Laravel Sanctum
 - Spatie Laravel Permission
 - MySQL
 
 ### Frontend
 - React.js
+- Axios
 
 ---
 
-##  Installation & Setup
+## Project Structure (Backend)
 
-### 1. Clone the project
+```
+app/
+ ├── Http/
+ │   ├── Controllers/
+ │   ├── Requests/
+ │   └── Resources/
+ ├── Models/
+ ├── Services/
+ ├── Repositories/
+ ├── Policies/
+ └── Traits/
+```
+
+---
+
+## Installation Guide
+
+### Clone Repository
 ```bash
 git clone https://github.com/csesiddiqul/task-management
 cd task-management
-2. Install backend dependencies
+```
+
+### Install Dependencies
+```bash
 composer install
-3. Setup environment
+```
+
+### Setup Environment
+```bash
 cp .env.example .env
 php artisan key:generate
-4. Configure database
+```
 
-Update your .env file:
-
+### Configure Database (.env)
+```
 DB_DATABASE=task_management
 DB_USERNAME=root
 DB_PASSWORD=
-5. Run migrations
-php artisan migrate
-6. Seed database
+```
+
+### Run Migrations & Seeders
+```bash
+php artisan migrate --seed
 php artisan db:seed --class=RoleSeeder
-7. Start development server
+```
+
+### Start Server
+```bash
 php artisan serve
-API Base URL
+```
+
+---
+
+## API Base URL
+
+```
 http://localhost:8000/api
-Notes
-Ensure MySQL is running before migration
-Sanctum token must be used for protected routes
-Roles must be seeded before testing access control
+```
+
+---
+
+## API Testing
+
+Run:
+```bash
+php artisan test
+```
+
+### If Tests Fail 
+
+Enable these in `php.ini`:
+Remove This ;
+```
+extension=pdo_sqlite
+extension=sqlite3
+```
+
+---
+
+## Notes
+
+- Ensure MySQL is running before migrations  
+- Sanctum Token required for protected routes  
+- Roles must be seeded before permission testing  
+
+---
+
+## Author
+
+Md Siddiqul Islam Labib  
+Full Stack Laravel Developer  
