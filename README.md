@@ -23,8 +23,8 @@ This system helps teams manage daily tasks, track progress, and maintain workflo
 ##  Technology Stack
 
 ### Backend
-- Laravel 11+
-- PHP 8.3
+- Laravel 12+
+- PHP 8.2
 - Laravel Sanctum (API Authentication)
 - Spatie Laravel Permission
 - MySQL
